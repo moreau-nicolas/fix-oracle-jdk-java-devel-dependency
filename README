@@ -1,0 +1,7 @@
+README
+======
+
+Oracle JDK RPM does not provide the expected "java-devel" dependency. It provides "jdk"
+instead. This has an unfortunate effect: installing ant, maven or any tool that requires
+java-devel will try and install openjdk. This is not desirable.
+This RPM tries to find a "clean" solution to this problem, by creating a dummy package that requires "jdk" and provides "java-devel".
